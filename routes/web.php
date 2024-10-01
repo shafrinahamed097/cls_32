@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
 // app controller
 
 Route::get('/public', [AppController::class, 'publicMessage']);
-Route::get('/secret', [AppController::class, 'secretMessage']);
+Route::get('/secret', [AppController::class, 'secretMessage'])->middleware('auth');
 
 
 
