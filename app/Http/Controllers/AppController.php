@@ -34,6 +34,6 @@ class AppController extends Controller
 
     function logout(Request $request){
         Auth::logout();
-        return response("Logged Out", 200);
+        return redirect()->route('login');
     }
 }
