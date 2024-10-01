@@ -1,7 +1,7 @@
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Profile Information') }}
+            {{ __('Profile Information ') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
@@ -45,6 +45,18 @@
                     @endif
                 </div>
             @endif
+        </div>
+
+        <div>
+            <x-input-label for="facebook_id" :value="__('Facebook ID')" />
+            <x-text-input id="facebook_id" name="facebook_id" type="text" class="mt-1 block w-full" :value="old('name', $user->facebook_id)" required autofocus autocomplete="facebook_id" />
+            <x-input-error class="mt-2" :messages="$errors->get('facebook_id')" />
+        </div>
+
+        <div>
+            <x-input-label for="github_id" :value="__('Github ID')" />
+            <x-text-input id="github_id" name="github_id" type="text" class="mt-1 block w-full" :value="old('name', $user->github_id)" required autofocus autocomplete="github_id" />
+            <x-input-error class="mt-2" :messages="$errors->get('github_id')" />
         </div>
 
         <div class="flex items-center gap-4">
