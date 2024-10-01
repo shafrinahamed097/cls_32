@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/public', [AppController::class, 'publicMessage']);
 Route::get('/secret', [AppController::class, 'secretMessage'])->middleware('auth');
-
+Route::get('/app/login', [AppController::class, 'login']);
 
 
 require __DIR__.'/auth.php';

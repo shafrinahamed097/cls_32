@@ -19,4 +19,21 @@ class AppController extends Controller
         // }
         return response("This is for logged in users",200);
     }
+
+    function login(Request $request){
+        $credentials = [
+            'email'=> 'me@me.com',
+            'password'=>'123456789'
+        ];
+        if(Auth::attempt($credentials)){
+            return redirect()->route('dashboard');
+        }else{
+            return response("Invalid credentials", 401);
+        }
+    }
+
+    function logout(Request $request){
+        Auth::logout();
+        return response("Logged Out", 200);
+    }
 }
