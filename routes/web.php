@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\TaskController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,6 +25,10 @@ Route::get('/public', [AppController::class, 'publicMessage']);
 Route::get('/secret', [AppController::class, 'secretMessage'])->middleware('auth');
 Route::get('/app/login', [AppController::class, 'login']);
 Route::get('/app/logout', [AppController::class, 'logout']);
+
+// Tasks 
+Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index')->middleware('auth');
+Route::get('/tasks', [TaskController::class, 'store'])->name('tasks.store')->middleware('auth');
 
 
 require __DIR__.'/auth.php';

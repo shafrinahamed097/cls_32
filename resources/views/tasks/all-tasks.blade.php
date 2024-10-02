@@ -1,3 +1,12 @@
-<div>
-    <!-- Act only according to that maxim whereby you can, at the same time, will that it should become a universal law. - Immanuel Kant -->
-</div>
+<section>
+    <header>
+        <h2 class="text-lg font-medium text-gray-900">
+            {{ __('All Tasks') }}
+        </h2>
+
+        <p class="mt-1 text-sm text-gray-600">
+            {{ __('All Tasks of Current User.') }}
+        </p>
+    </header>
+
+    </section>
